@@ -39,6 +39,8 @@ public class Ventana extends javax.swing.JFrame {
         jcombobox = new javax.swing.JComboBox<>();
         bcalcular = new javax.swing.JButton();
         breset = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txtn3 = new javax.swing.JTextField();
         resultado = new javax.swing.JLabel();
         txtvalor = new javax.swing.JLabel();
 
@@ -82,6 +84,8 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("numero 3");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -95,14 +99,19 @@ public class Ventana extends javax.swing.JFrame {
                         .addComponent(bcalcular)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(breset))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtn1)
-                            .addComponent(txtn2, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtn3, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtn1)
+                                .addComponent(txtn2, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)))))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -118,10 +127,14 @@ public class Ventana extends javax.swing.JFrame {
                     .addComponent(txtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtn3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jcombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bcalcular)
                     .addComponent(breset))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         resultado.setText("Resultado");
@@ -151,11 +164,11 @@ public class Ventana extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(resultado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtvalor)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
@@ -165,11 +178,12 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
         double n1= Double.parseDouble(txtn1.getText());
         double n2= Double.parseDouble(txtn2.getText());
+        double n3= Double.parseDouble(txtn3.getText());
         double result = 0;
         String operacion=""+jcombobox.getSelectedItem();
         resultado.setText(" la operacion es "+ operacion);
-        if(operacion.equals("suma")) result = n1 + n2;
-        else result =n1-n2;
+        if(operacion.equals("suma")) result = n1 + n2 + n3;
+        else result =n1-n2 - n3;
         txtvalor.setText("Resultado "+result);
         
         
@@ -278,11 +292,13 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton breset;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> jcombobox;
     private javax.swing.JLabel resultado;
     private javax.swing.JTextField txtn1;
     private javax.swing.JTextField txtn2;
+    private javax.swing.JTextField txtn3;
     private javax.swing.JLabel txtvalor;
     // End of variables declaration//GEN-END:variables
 }
