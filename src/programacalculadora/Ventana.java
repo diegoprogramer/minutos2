@@ -5,6 +5,10 @@
  */
 package programacalculadora;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+import java.awt.*;
+
 /**
  *
  * @author alexander
@@ -27,21 +31,209 @@ public class Ventana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtn1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtn2 = new javax.swing.JTextField();
+        jcombobox = new javax.swing.JComboBox<>();
+        bcalcular = new javax.swing.JButton();
+        breset = new javax.swing.JButton();
+        resultado = new javax.swing.JLabel();
+        txtvalor = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("calculadora");
+
+        jLabel1.setText("numero 1");
+
+        txtn1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtn1KeyTyped(evt);
+            }
+        });
+
+        jLabel2.setText("numero 2");
+
+        txtn2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtn2KeyTyped(evt);
+            }
+        });
+
+        jcombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "suma", "resta" }));
+        jcombobox.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jcomboboxKeyTyped(evt);
+            }
+        });
+
+        bcalcular.setText("calcular");
+        bcalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bcalcularActionPerformed(evt);
+            }
+        });
+
+        breset.setText("reset");
+        breset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bresetActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jcombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(bcalcular)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(breset))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtn1)
+                            .addComponent(txtn2, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE))))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtn2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jcombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bcalcular)
+                    .addComponent(breset))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+
+        resultado.setText("Resultado");
+
+        txtvalor.setText("valor");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(283, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(229, 229, 229))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(247, 247, 247))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(353, 353, 353)
+                .addComponent(txtvalor, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(resultado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtvalor)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcalcularActionPerformed
+        // TODO add your handling code here:
+        double n1= Double.parseDouble(txtn1.getText());
+        double n2= Double.parseDouble(txtn2.getText());
+        double result = 0;
+        String operacion=""+jcombobox.getSelectedItem();
+        resultado.setText(" la operacion es "+ operacion);
+        if(operacion.equals("suma")) result = n1 + n2;
+        else result =n1-n2;
+        txtvalor.setText("Resultado "+result);
+        
+        
+    }//GEN-LAST:event_bcalcularActionPerformed
+
+    private void bresetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bresetActionPerformed
+        // TODO add your handling code here:
+        txtn1.setText("");
+        txtn1.requestFocus();
+        txtn2.setText("");
+        txtvalor.setText("");
+        String operacion =""+jcombobox.getSelectedItem();
+        resultado.setText("la operacion es "+operacion);
+        
+    }//GEN-LAST:event_bresetActionPerformed
+
+    private void txtn1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtn1KeyTyped
+        // code key tiped
+        char teclaPresionada= evt.getKeyChar();
+       if(teclaPresionada==KeyEvent.VK_ENTER){
+       txtn2.requestFocus();
+       txtn2.setBackground(Color.YELLOW);
+       
+       }
+       
+       if(teclaPresionada == KeyEvent.VK_ESCAPE){
+           bcalcular.doClick();
+       
+       }
+        
+    }//GEN-LAST:event_txtn1KeyTyped
+
+    private void txtn2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtn2KeyTyped
+        // code key tiped
+           char cTeclaPresionada =evt.getKeyChar();
+        // da click al boton aceptar
+        
+         if(cTeclaPresionada == KeyEvent.VK_ENTER){
+            txtn1.requestFocus();
+            
+            System.out.println(" tecla "+cTeclaPresionada );
+        }
+        if(cTeclaPresionada == KeyEvent.VK_ESCAPE){
+        //EJECUTA EL BOTON DE ACEPTAR
+        bcalcular.doClick();
+        }
+        
+       
+    }//GEN-LAST:event_txtn2KeyTyped
+
+    private void jcomboboxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jcomboboxKeyTyped
+        // TODO add your handling code here:
+        char teclaPresionada =evt.getKeyChar();
+        if(teclaPresionada==KeyEvent.VK_ENTER){
+        bcalcular.doClick();
+        }
+        if(teclaPresionada == KeyEvent.VK_RIGHT){
+            jcombobox.requestFocus();
+            jcombobox.setBackground(Color.yellow);
+            System.out.println(" tecla "+teclaPresionada );
+        }
+        
+        
+    }//GEN-LAST:event_jcomboboxKeyTyped
 
     /**
      * @param args the command line arguments
@@ -71,13 +263,26 @@ public class Ventana extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+       
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Ventana().setVisible(true);
             }
         });
     }
-
+    // more methods
+    
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bcalcular;
+    private javax.swing.JButton breset;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> jcombobox;
+    private javax.swing.JLabel resultado;
+    private javax.swing.JTextField txtn1;
+    private javax.swing.JTextField txtn2;
+    private javax.swing.JLabel txtvalor;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,6 +16,8 @@ public class Programacalculadora {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Ventana v1 =new Ventana();
+        v1.setVisible(true);
     }
     
 }
