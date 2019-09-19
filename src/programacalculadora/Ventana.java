@@ -177,28 +177,15 @@ public class Ventana extends javax.swing.JFrame {
 
     private void bresetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bresetActionPerformed
         // TODO add your handling code here:
-        txtn1.setText("");
-        txtn1.requestFocus();
-        txtn2.setText("");
-        txtvalor.setText("");
-        String operacion =""+jcombobox.getSelectedItem();
-        resultado.setText("la operacion es "+operacion);
+       
         
     }//GEN-LAST:event_bresetActionPerformed
 
     private void txtn1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtn1KeyTyped
         // code key tiped
-        char teclaPresionada= evt.getKeyChar();
-       if(teclaPresionada==KeyEvent.VK_ENTER){
-       txtn2.requestFocus();
-       txtn2.setBackground(Color.YELLOW);
+ 
        
-       }
        
-       if(teclaPresionada == KeyEvent.VK_ESCAPE){
-           bcalcular.doClick();
-       
-       }
         
     }//GEN-LAST:event_txtn1KeyTyped
 
@@ -212,10 +199,7 @@ public class Ventana extends javax.swing.JFrame {
             
             System.out.println(" tecla "+cTeclaPresionada );
         }
-        if(cTeclaPresionada == KeyEvent.VK_ESCAPE){
-        //EJECUTA EL BOTON DE ACEPTAR
-        bcalcular.doClick();
-        }
+       
         
        
     }//GEN-LAST:event_txtn2KeyTyped
